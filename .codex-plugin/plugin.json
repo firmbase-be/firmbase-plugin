@@ -15,7 +15,7 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "firmbase",
-    "shortDescription": "Belgian company data from the official registers",
+    "shortDescription": "Belgian company data",
     "longDescription": "Ask about any Belgian company and get answers from the official sources: the Crossroads Bank for Enterprises register, the annual accounts filed with the National Bank of Belgium and the Belgian Official Gazette, refreshed every night.\n\nLook up a company by name, enterprise or VAT number; read its key figures, directors, shareholders and publications; run a due-diligence check with the health score, insolvency notices, the 30bis/30ter withholding obligation and sanctions screening; or build a prospect list ranked on revenue or staff.\n\nSign in with your firmbase account when you connect. Every tool call counts on your firmbase plan; the register tools are free.",
     "developerName": "firmbase",
     "category": "Finance",
