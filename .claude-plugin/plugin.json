@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "firmbase",
+  "displayName": "firmbase",
+  "version": "1.0.0",
+  "description": "Belgian company data from the official sources: the CBE/KBO register, annual accounts filed with the National Bank, the Belgian Official Gazette, insolvency notices and sanctions lists. Look up any company, check a counterparty, or build a prospect list. Sign in with your firmbase account; no API key to paste.",
+  "author": {
+    "name": "firmbase",
+    "email": "support@firmbase.be",
+    "url": "https://firmbase.be"
+  },
+  "homepage": "https://firmbase.be/en/api/mcp",
+  "repository": "https://github.com/firmbase-be/firmbase-plugin",
+  "license": "MIT",
+  "keywords": ["belgium", "company-data", "kbo", "bce", "cbe", "annual-accounts", "due-diligence", "kyc", "credit-risk", "mcp"],
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://firmbase.be/en/api/mcp",
+  "supportUrl": "https://github.com/firmbase-be/firmbase-plugin/issues",
+  "privacyPolicyUrl": "https://firmbase.be/en/privacy",
+  "termsOfServiceUrl": "https://firmbase.be/en/terms"
+}

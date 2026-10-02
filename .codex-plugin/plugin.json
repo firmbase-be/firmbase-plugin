@@ -1,0 +1,37 @@
+{
+  "name": "firmbase",
+  "version": "1.0.0",
+  "description": "Belgian company data from the official sources: the CBE/KBO register, annual accounts filed with the National Bank, the Belgian Official Gazette, insolvency notices and sanctions lists.",
+  "author": {
+    "name": "firmbase",
+    "email": "support@firmbase.be",
+    "url": "https://firmbase.be"
+  },
+  "homepage": "https://firmbase.be/en/api/mcp",
+  "repository": "https://github.com/firmbase-be/firmbase-plugin",
+  "license": "MIT",
+  "keywords": ["belgium", "company-data", "kbo", "bce", "cbe", "annual-accounts", "due-diligence", "kyc", "credit-risk"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "firmbase",
+    "shortDescription": "Belgian company data from the official registers",
+    "longDescription": "Ask about any Belgian company and get answers from the official sources: the Crossroads Bank for Enterprises register, the annual accounts filed with the National Bank of Belgium and the Belgian Official Gazette, refreshed every night.\n\nLook up a company by name, enterprise or VAT number; read its key figures, directors, shareholders and publications; run a due-diligence check with the health score, insolvency notices, the 30bis/30ter withholding obligation and sanctions screening; or build a prospect list ranked on revenue or staff.\n\nSign in with your firmbase account when you connect. Every tool call counts on your firmbase plan; the register tools are free.",
+    "developerName": "firmbase",
+    "category": "Finance",
+    "capabilities": ["Read"],
+    "websiteURL": "https://firmbase.be",
+    "supportURL": "https://github.com/firmbase-be/firmbase-plugin/issues",
+    "privacyPolicyURL": "https://firmbase.be/en/privacy",
+    "termsOfServiceURL": "https://firmbase.be/en/terms",
+    "defaultPrompt": [
+      "Run a due-diligence check on BE 0403.199.702 before we extend credit",
+      "Which IT companies in Ghent have the highest revenue?",
+      "In which companies does Jan Peeters hold a mandate?"
+    ],
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.png",
+    "screenshots": [],
+    "brandColor": "#0C5BFD"
+  }
+}

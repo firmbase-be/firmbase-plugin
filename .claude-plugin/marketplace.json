@@ -1,0 +1,15 @@
+{
+  "name": "firmbase",
+  "owner": { "name": "firmbase", "email": "support@firmbase.be" },
+  "metadata": {
+    "description": "firmbase plugins: Belgian company data for AI assistants."
+  },
+  "plugins": [
+    {
+      "name": "firmbase",
+      "source": "./",
+      "description": "Belgian company data from the CBE register, the National Bank and the Official Gazette.",
+      "category": "data"
+    }
+  ]
+}

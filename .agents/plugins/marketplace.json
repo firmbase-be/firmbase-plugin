@@ -1,0 +1,20 @@
+{
+  "name": "firmbase",
+  "interface": {
+    "displayName": "firmbase"
+  },
+  "plugins": [
+    {
+      "name": "firmbase",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Finance"
+    }
+  ]
+}

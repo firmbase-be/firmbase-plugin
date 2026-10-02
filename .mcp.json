@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "firmbase": {
+      "type": "http",
+      "url": "https://api.firmbase.be/mcp"
+    }
+  }
+}
