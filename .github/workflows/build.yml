@@ -1,0 +1,52 @@
+name: build
+
+# Every push and pull request validates the manifests and builds one zip per
+# harness as a workflow artifact. A push to main whose version has no release
+# yet tags it vX.Y.Z and publishes the zips as a GitHub release.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Validate with Claude Code
+        run: |
+          npm install -g @anthropic-ai/claude-code
+          claude plugin validate .
+
+      - name: Validate and build zips
+        run: python3 scripts/build.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: firmbase-plugin-zips
+          path: dist/*.zip
+
+      - name: Publish GitHub release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="v$(python3 -c 'import json; print(json.load(open(".codex-plugin/plugin.json"))["version"])')"
+          if gh release view "$tag" > /dev/null 2>&1; then
+            echo "$tag is already released; bump the version to publish a new release"
+          else
+            gh release create "$tag" dist/*.zip --target "$GITHUB_SHA" --title "$tag" --generate-notes
+          fi
