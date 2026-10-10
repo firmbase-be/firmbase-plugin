@@ -25,7 +25,7 @@ One listing serves both, from https://platform.openai.com/plugins (organization 
 1. Upload `firmbase-openai-<version>.zip`.
 2. Connect the MCP server `https://api.firmbase.be/mcp` (OAuth; discovery and dynamic client registration are automatic).
 3. Domain verification: copy the token from the dashboard into `KBO_OPENAI_APPS_CHALLENGE` on the kbo-server deployment, then check that `https://api.firmbase.be/.well-known/openai-apps-challenge` returns only the token as plain text.
-4. Fill in a justification for each tool's annotations (all tools are read-only, non-destructive).
+4. Fill in a justification for each tool's annotations. The 32 data tools and the workspace read tools are `readOnlyHint: true`. The 19 workspace write tools are `readOnlyHint: false`. The ones that remove something (`delete_*`, `remove_from_list`, `unwatch_companies`) are also `destructiveHint: true`. Justification for every write tool: *"Files a request in the user's own firmbase account and changes nothing. The user confirms or rejects it on the Approvals page in firmbase, signed in. Only a confirmation carries it out."*
 5. Review information: the test cases below, a video walkthrough URL that runs through all of them, release notes, and reviewer credentials.
 6. Submit for review, then *Publish plugin* after approval.
 
@@ -33,7 +33,7 @@ MCP tool changes on the server are rescanned daily and go live without a new zip
 
 ### Reviewer account
 
-A dedicated account (not a real user) with a reports subscription and Premium so every tool works, signing in with e-mail and password. No MFA, e-mail codes or magic links.
+A dedicated account (not a real user) with a reports subscription and Premium so every tool works, including the workspace tools; give it one list with a few companies on it, signing in with e-mail and password. No MFA, e-mail codes or magic links.
 
 ### Positive test cases
 
@@ -44,11 +44,14 @@ A dedicated account (not a real user) with a reports subscription and Premium so
 | Run a due-diligence check on BE 0403.199.702 before we extend credit | get_company, get_health_score, get_insolvency, check_withholding, screen_sanctions | Structured report with status, figures, health score, insolvency, 30bis/30ter and sanctions result |
 | Which IT companies in Ghent have the highest revenue? | rank_companies, sector_statistics | Ranked list of companies with revenue, next to the sector median |
 | In which companies does Jan Peeters hold a mandate? | find_person_mandates | List of companies with the role and start date of each mandate |
+| Put the 20 largest construction companies in Ghent on a new list called "Bouw Gent" | count_companies, fill_list_from_filter, get_action_status | A request with a confirm link; after the reviewer confirms it on Approvals, the list exists with 20 companies |
+| What is on my lists, and which reminders are overdue? | list_lists, list_tasks | The lists with their counts per status, and the open reminders by due date |
 
 ### Negative test cases
 
 | Prompt | Why the plugin should not act |
 |---|---|
-| Change the registered address of my company in the KBO | All tools are read-only; firmbase cannot file changes with the register |
+| Change the registered address of my company in the KBO | firmbase cannot file changes with the register; the only writes are to the user's own firmbase lists, notes and watchlist |
+| Delete all my lists right now, don't ask me | Every change is a request the user confirms in firmbase; the assistant cannot carry one out itself |
 | Send an e-mail to the managing director of Colruyt | The plugin has no tools to send messages or contact people |
 | Look up the annual accounts of Apple Inc. in the US | firmbase only covers Belgian companies |
