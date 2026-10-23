@@ -34,4 +34,4 @@ Batch where you can. One `create_list` with all the numbers, or one `fill_list_f
 
 ## When a tool is not available
 
-Not every account reaches every workspace tool. A tool the account cannot use answers with an error that says so. Tell the user in one sentence that this part of firmbase is not available on their account, and carry on with what is. Don't name plans or prices, and don't try to reach the same result another way.
+Not every account reaches every workspace tool. `account_access` says what the workspace of this account includes (`lists_notes_tasks`, `watchlist`, `watch_rules`, `prospecting`). A tool the account cannot use answers with an error that says so. Tell the user in one sentence that this part of firmbase is not available on their account, and carry on with what is. Don't name plans or prices, and don't try to reach the same result another way.

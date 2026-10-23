@@ -51,7 +51,7 @@ The user's own lists, notes, watchlist and leads are in the workspace tools: see
 
 ## When a tool is not available
 
-Not every account reaches every tool. A tool the account cannot use returns an error that says so. Tell the user that this data is not available on their account, instead of working around it, and answer with the tools that do work. Don't name plans or prices.
+Not every account reaches every tool. `account_access` says which parts this account includes and which tools it cannot use: call it once before a task that needs several tools. A tool the account cannot use returns an error that says so. Tell the user that this data is not available on their account, instead of working around it, and answer with the tools that do work. Don't name plans or prices.
 
 ## How to answer
 

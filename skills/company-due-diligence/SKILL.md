@@ -7,6 +7,8 @@ description: Run a structured due-diligence or credit check on a Belgian company
 
 Work through the steps in order. Every step uses a firmbase tool; see the `belgian-company-data` skill for the tool map.
 
+First call `account_access` once. It says which parts this account includes; plan the check with those, and name the steps it leaves out instead of calling their tools.
+
 1. **Identify** the company with `search_companies` or `lookup_vat`, and confirm the enterprise number with the user if the match is not certain.
 2. **Identity and status** with `get_company`: legal form, start date, registered address, main activity, and the legal situation. Anything other than normal (stopped, in liquidation, bankrupt) is the headline.
 3. **Figures** with `get_financial_summary`: revenue or gross margin, net result, equity, solvency and liquidity over the last years. Describe the trend, not just the latest year.

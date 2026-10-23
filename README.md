@@ -4,7 +4,7 @@ Belgian company data inside your AI assistant, from the official sources: the Cr
 
 The plugin connects the [firmbase MCP server](https://firmbase.be/en/api/mcp) and adds four skills:
 
-- **belgian-company-data**: which of the 32 data tools answers which question, how to identify a company, and how to cite the sources.
+- **belgian-company-data**: which of the 33 data tools answers which question, how to identify a company, and how to cite the sources.
 - **company-due-diligence**: a structured check of a counterparty, from status and figures to insolvency notices, the 30bis/30ter withholding obligation and sanctions screening.
 - **prospect-list**: target companies in a sector and region, ranked on revenue or staff, next to the sector median, and saved as a list in firmbase if you want.
 - **sales-workspace**: your own firmbase account through 34 more tools: sales lists and their pipeline, notes and reminders, saved searches, the watchlist and watch rules, leads and exports.
