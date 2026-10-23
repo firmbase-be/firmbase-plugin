@@ -37,11 +37,11 @@ Codex asks you to sign in with firmbase when the plugin is installed.
 
 No plugin needed. Add `https://api.firmbase.be/mcp` as a custom connector and sign in when asked. See [firmbase.be/en/api/mcp](https://firmbase.be/en/api/mcp) for per-client steps.
 
-## Sign-in and pricing
+## Sign-in
 
 You sign in with your firmbase account through OAuth. You don't paste an API key anywhere. The connection gets its own key on your account, named after the client, so you can see its usage and revoke it in the [dashboard](https://firmbase.be/en/dashboard).
 
-Each tool call is one call on your firmbase plan. The register tools work on the free plan (100 calls a day). Annual accounts, people and rankings need Pro or a reports subscription; the health score and the full report need a reports subscription; sanctions screening needs Premium. The workspace tools need a firmbase platform plan (Start, Team or Premium); prospecting filters, saved searches, the sales profile and exports need Premium. See [pricing](https://firmbase.be/en/pricing).
+Which tools your account reaches is set by your firmbase account. A tool it does not reach says so, and the assistant tells you.
 
 ## Privacy
 

@@ -13,4 +13,4 @@ description: Build a list of Belgian target companies in a sector and region, ra
 
 6. **Offer to save it.** If the user wants to work through the list, offer to put it in firmbase. `fill_list_from_filter` takes the same filter as the ranking (`nace_prefix`, `zip`, `province`, `min_<metric>`…) and fills a new list (`new_list_name`) or an existing one (`list_id` from `list_lists`). `count_companies` tells you beforehand how many companies the filter holds. To keep watching for new companies that match, offer `save_search`. Both are requests the user confirms in firmbase: follow the **sales-workspace** skill.
 
-Rankings need a Pro plan or a reports subscription. If the tool answers that the plan does not include it, tell the user, and offer what the free register tools can still do: `search_companies` on activity and municipality, without the figures.
+If the ranking tools are not available on the user's account, say so, and offer what the register tools can still do: `search_companies` on activity and municipality, without the figures.

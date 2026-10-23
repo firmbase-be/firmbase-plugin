@@ -15,6 +15,6 @@ Work through the steps in order. Every step uses a firmbase tool; see the `belgi
 6. **Red flags**: `get_insolvency` for court notices, `check_withholding` for the 30bis/30ter obligation, `screen_sanctions` for the company, its board and its shareholders.
 7. **Verdict**: a short paragraph, then the three points a credit controller should look at, each one tied to the data that raised it.
 
-When a step is not on the user's plan, say so in that section and carry on with the rest.
+When a step's tool is not available on the user's account, say so in that section and carry on with the rest.
 
 Mark which statements come from the register or the filed accounts, and which from firmbase's models (the health score and the credit limit). End with a link to the full report: `https://firmbase.be/en/company/<number>/<name>` (ten digits, the name lowercased with hyphens).

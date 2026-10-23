@@ -5,7 +5,7 @@ description: Work in the user's own firmbase account - sales lists and their pip
 
 # The firmbase sales workspace
 
-Besides the public company data, the firmbase MCP server reaches the user's own account: the lists their team works through, the notes and tasks on companies, what they follow, and the leads their sales profile proposes. On a team plan these are shared with the team.
+Besides the public company data, the firmbase MCP server reaches the user's own account: the lists their team works through, the notes and tasks on companies, what they follow, and the leads their sales profile proposes. In a team account these are shared with the team.
 
 ## Reading is immediate
 
@@ -32,6 +32,6 @@ No write tool changes anything by itself. `create_list`, `add_to_list`, `fill_li
 
 Batch where you can. One `create_list` with all the numbers, or one `fill_list_from_filter`, is one confirmation for the user. Twenty `add_to_list` calls would be twenty.
 
-## Plans
+## When a tool is not available
 
-The lists, notes, tasks, watchlist and rules need a firmbase platform plan (Start, Team or Premium). Prospecting filters, saved searches, the sales profile and exports need Premium. A tool the plan does not include says so. Pass that on and point to https://firmbase.be/en/pricing.
+Not every account reaches every workspace tool. A tool the account cannot use answers with an error that says so. Tell the user in one sentence that this part of firmbase is not available on their account, and carry on with what is. Don't name plans or prices, and don't try to reach the same result another way.

@@ -49,9 +49,9 @@ Prefer the narrow tool over `get_company_report` when one section answers the qu
 
 The user's own lists, notes, watchlist and leads are in the workspace tools: see the **sales-workspace** skill.
 
-## Plans
+## When a tool is not available
 
-Each tool call is one call on the user's firmbase plan. The register tools work on the free plan. Annual accounts, people, insolvency notices and rankings need Pro or a reports subscription. The health score, the full report and the withholding check need a reports subscription, and sanctions screening needs Premium. The change history of a company needs a Business API plan. A tool the plan does not include returns an error that names what is required. Pass that on to the user instead of working around it, and point them to https://firmbase.be/en/pricing.
+Not every account reaches every tool. A tool the account cannot use returns an error that says so. Tell the user that this data is not available on their account, instead of working around it, and answer with the tools that do work. Don't name plans or prices.
 
 ## How to answer
 
