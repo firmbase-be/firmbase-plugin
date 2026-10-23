@@ -7,6 +7,8 @@ description: Run a structured due-diligence or credit check on a Belgian company
 
 Work through the steps in order. Every step uses a firmbase tool; see the `belgian-company-data` skill for the tool map.
 
+First call `account_access` once. It says which parts this account includes; plan the check with those, and name the steps it leaves out instead of calling their tools.
+
 1. **Identify** the company with `search_companies` or `lookup_vat`, and confirm the enterprise number with the user if the match is not certain.
 2. **Identity and status** with `get_company`: legal form, start date, registered address, main activity, and the legal situation. Anything other than normal (stopped, in liquidation, bankrupt) is the headline.
 3. **Figures** with `get_financial_summary`: revenue or gross margin, net result, equity, solvency and liquidity over the last years. Describe the trend, not just the latest year.
@@ -15,6 +17,6 @@ Work through the steps in order. Every step uses a firmbase tool; see the `belgi
 6. **Red flags**: `get_insolvency` for court notices, `check_withholding` for the 30bis/30ter obligation, `screen_sanctions` for the company, its board and its shareholders.
 7. **Verdict**: a short paragraph, then the three points a credit controller should look at, each one tied to the data that raised it.
 
-When a step is not on the user's plan, say so in that section and carry on with the rest.
+When a step's tool is not available on the user's account, say so in that section and carry on with the rest.
 
 Mark which statements come from the register or the filed accounts, and which from firmbase's models (the health score and the credit limit). End with a link to the full report: `https://firmbase.be/en/company/<number>/<name>` (ten digits, the name lowercased with hyphens).

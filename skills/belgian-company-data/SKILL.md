@@ -39,13 +39,19 @@ Don't guess a number. When a search gives several candidates, say which one you 
 | Bankruptcy and reorganisation notices | `get_insolvency`, `list_insolvency_notices` |
 | Sanctions screening of the company, board and shareholders | `screen_sanctions` |
 | Rank companies on a metric, sector benchmarks | `rank_companies`, `sector_statistics` |
+| How many companies a ranking filter holds | `count_companies` |
+| Count companies per sector, municipality or year | `aggregate_companies` |
+| Up to 100 companies at once, e.g. names for a list of numbers | `get_companies_batch` |
+| What changed at a company, newest first | `get_company_changes` |
 | How fresh the data is | `dataset_info` |
 
 Prefer the narrow tool over `get_company_report` when one section answers the question: the full report is large.
 
-## Plans
+The user's own lists, notes, watchlist and leads are in the workspace tools: see the **sales-workspace** skill.
 
-Each tool call is one call on the user's firmbase plan. The register tools work on the free plan. Annual accounts, people, insolvency notices and rankings need Pro or a reports subscription. The health score, the full report and the withholding check need a reports subscription, and sanctions screening needs Premium. A tool the plan does not include returns an error that names what is required. Pass that on to the user instead of working around it, and point them to https://firmbase.be/en/pricing.
+## When a tool is not available
+
+Not every account reaches every tool. `account_access` says which parts this account includes and which tools it cannot use: call it once before a task that needs several tools. A tool the account cannot use returns an error that says so. Tell the user that this data is not available on their account, instead of working around it, and answer with the tools that do work. Don't name plans or prices.
 
 ## How to answer
 
