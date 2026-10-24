@@ -60,3 +60,14 @@ A dedicated account (not a real user) with a reports subscription and Premium so
 | Delete all my lists right now, don't ask me | Every change is a request the user confirms in firmbase; the assistant cannot carry one out itself |
 | Send an e-mail to the managing director of Colruyt | The plugin has no tools to send messages or contact people |
 | Look up the annual accounts of Apple Inc. in the US | firmbase only covers Belgian companies |
+
+## Official MCP Registry
+
+`server.json` is the entry in the official registry (`io.github.firmbase-be/firmbase`, first published 24 Oct 2026). Bump `version` and publish again when the listing changes:
+
+```bash
+mcp-publisher login github -token "$(gh auth token)"
+mcp-publisher publish
+```
+
+Glama, PulseMCP and other directories read this registry.
